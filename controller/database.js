@@ -1,13 +1,7 @@
-/**
- *  @Database
- *  @author       Arne Winter
- *  @requires
- */
 const sqlite3 = require("sqlite3").verbose();
 const serverSettings = require("../server.conf.json");
 let db_path = `${process.cwd()}/database/${serverSettings.db.db_name}.sqlite`;
 
-console.log(process.cwd())
 const dbConnection = new sqlite3.Database(db_path, sqlite3.OPEN_READWRITE,(err) => 
 {
     if (err) 

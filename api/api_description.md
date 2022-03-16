@@ -25,14 +25,14 @@
 // name        : putTraining
 // type:       : put
 // description : insert or update a Training
-// parameters  : training_id: number
+// parameters  : training_id?: number, name?: string, description?: string, referrer_id?: number, price?: number
 // callback    : message: string
 
 ## putEvent 
 // name        : putEvent
 // type:       : put
 // description : insert or update a Event
-// parameters  : event_id: number
+// parameters  : event_id: number, date?: string, training_id?: number
 // callback    : message: string
 
 ## postBooking
