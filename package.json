@@ -1,0 +1,23 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "description": "api for training bookings",
+  "main": "api_server.js",
+  "scripts": {
+    "test": "exectest",
+    "start": "nodemon api_server.js"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Arne Winter",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "sqlite3": "^5.0.2"
+  }
+}
