@@ -48,21 +48,20 @@ async function startRestInterfaces()
         res.send(await api.getTrainingsBetweenDates.call(req.body.dateFrom, req.body.dateTo));
     })
 
-
     app.get('/getEventsOfTraining/:training_id', async (req, res) => {
         res.send(await api.getEventsOfTraining.call(req.params.training_id));
     })
 
     app.put('/putTraining', async (req, res) => {
-        res.send(await api.putTraining.call());
+        res.send(await api.putTraining.call(req.body));
     })
 
     app.put('/putEvent', async (req, res) => {
-        res.send(await api.putEvent.call());
+        res.send(await api.putEvent.call(req.body));
     })
 
-    app.post('/postBooking', async (req, res) => {
-        res.send(await api.postBooking.call());
+    app.put('/putBooking/:event_id', async (req, res) => {
+        res.send(await api.putBooking.call(req.params.event_id));
     })
     
 }

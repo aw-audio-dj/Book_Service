@@ -13,7 +13,7 @@ async function call()
 {
     try 
     {
-        return await db.query(`SELECT * from trainingss`);
+        return await db.query(`SELECT * from trainings`);
     } 
     catch (error) 
     {

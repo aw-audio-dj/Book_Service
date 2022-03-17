@@ -14,7 +14,6 @@ const url = `http://localhost:${fileSettings.server.port}/getTrainings`;
 // This is just for organisation and reporting
 describe('getTrainings', function() 
 {
-
     // This is the name of the test
     it('should load all trainings from Database', function(done) 
     {

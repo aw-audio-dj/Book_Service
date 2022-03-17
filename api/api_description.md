@@ -37,10 +37,9 @@
 // parameters  : event_id: number, date?: string, training_id?: number
 // callback    : message: string
 
-## postBooking
-// name        : postBooking
-// type:       : post
-// contentType : application/json
+## putBooking
+// name        : putBooking
+// type:       : put
 // description : insert a new booking 
 // parameters  : event_id: number
 // callback    : message: string
