@@ -63,5 +63,5 @@ async function startRestInterfaces()
     app.put('/putBooking/:event_id', async (req, res) => {
         res.send(await api.putBooking.call(req.params.event_id));
     })
-    
+
 }
