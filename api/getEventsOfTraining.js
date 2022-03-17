@@ -19,7 +19,7 @@ async function call(training_id)
     catch (error) 
     {
         console.log(error);
-        return {message: "get events failed"}
+        return {message: error.message}
 
     }
 }

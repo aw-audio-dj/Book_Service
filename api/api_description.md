@@ -11,7 +11,7 @@
 // name        : getTrainingsBetweenDates
 // type:       : get
 // description : return specific Trainings from database between two date's 
-// parameters  : dateFrom: date , dateTo: date
+// parameters  : dateFrom: date(isoString) , dateTo: date(isoString)
 // callback    : trainings[]
 
 ## getEventsOfTraining
@@ -24,6 +24,7 @@
 ## putTraining
 // name        : putTraining
 // type:       : put
+// contentType : application/json
 // description : insert or update a Training
 // parameters  : training_id?: number, name?: string, description?: string, referrer_id?: number, price?: number
 // callback    : message: string
@@ -31,6 +32,7 @@
 ## putEvent 
 // name        : putEvent
 // type:       : put
+// contentType : application/json
 // description : insert or update a Event
 // parameters  : event_id: number, date?: string, training_id?: number
 // callback    : message: string
@@ -38,6 +40,7 @@
 ## postBooking
 // name        : postBooking
 // type:       : post
+// contentType : application/json
 // description : insert a new booking 
 // parameters  : event_id: number
 // callback    : message: string

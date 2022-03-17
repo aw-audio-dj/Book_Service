@@ -7,19 +7,17 @@
 */
 
 // DB Controller
-let db = require("../controller/database.js");
+const db = require("../controller/database.js");
 
 async function call()
 {
     try 
     {
-        return await db.query(`SELECT * from trainings`);
+        return await db.query(`SELECT * from trainingss`);
     } 
     catch (error) 
     {
-        console.log(error);
-        return {message: "get trainings failed"}
-
+        return {message: error.message}
     }
 }
 

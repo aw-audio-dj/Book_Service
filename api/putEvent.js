@@ -1,6 +1,7 @@
 /*
 name        : putEvent
 type:       : put
+contentType : application/json
 description : insert or update a Event
 parameters  : event_id: number, date?: string, training_id?: number, maxAttendees?: number
 callback    : message: string
@@ -11,7 +12,7 @@ let db = require("../controller/database.js");
 
 async function call(event_id = null, date = null, training_id = null)
 {
-    let message = "insert or update event failed";
+    let callback = {message: "insert or update event failed"};
     try 
     {
         if(date != null && training_id != null )
@@ -21,29 +22,29 @@ async function call(event_id = null, date = null, training_id = null)
             {
                 // update
                 await db.query(`update events set date = '${date}', training_id = ${training_id} where event_id = ${event_id}` )
-                message = "update event successful";
+                callback.message = "update event successful";
             }
             else
             {
                 // insert
                 await db.query(`insert into events (date, training_id) values ('${date}' , ${training_id})`)
-                message = "insert event successful"
+                callback.message = "insert event successful"
             }
         }
         else
         {
-            message = "insert or update event failed - insufficient parameters";
+            callback.message = "insert or update event failed - insufficient parameters";
         }
         
     } 
     catch (error) 
     {
         console.log(error);
-        message = "insert or update event failed";
+        callback.message = error.message;
     }
     finally
     {
-        return message;
+        return callback;
     }
 }
 

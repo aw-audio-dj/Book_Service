@@ -1,6 +1,7 @@
 /*
 name        : postBooking
 type:       : post
+contentType : application/json
 description : insert a new booking 
 parameters  : event_id: number
 callback    : message: string
@@ -19,7 +20,7 @@ async function call(event_id)
     catch (error) 
     {
         console.log(error);
-        return {message: "insert booking failed"}
+        return {message: error.message}
     }
 }
 

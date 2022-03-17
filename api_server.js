@@ -31,6 +31,7 @@ async function startRestInterfaces()
         origin: "*"
     };
     app.use(cors(corsOptions));
+    // It enables us to transform body types from our request object (e.g. json, urlencoded):
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}) );
 
@@ -38,12 +39,18 @@ async function startRestInterfaces()
         res.send(await api.getTrainings.call());
     })
 
-    app.get('/getTrainingsBetweenDates', async (req, res) => {
-        res.send(await api.getTrainingsBetweenDates.call());
+    app.get('/getTrainingsBetweenDates/:dateFrom/:dateTo', async (req, res) => {
+        res.send(await api.getTrainingsBetweenDates.call(req.params.dateFrom, req.params.dateTo));
     })
 
-    app.get('/getEventsOfTraining', async (req, res) => {
-        res.send(await api.getEventsOfTraining.call());
+    // just for testing
+    app.get('/getTrainingsBetweenDates2', async (req, res) => {
+        res.send(await api.getTrainingsBetweenDates.call(req.body.dateFrom, req.body.dateTo));
+    })
+
+
+    app.get('/getEventsOfTraining/:training_id', async (req, res) => {
+        res.send(await api.getEventsOfTraining.call(req.params.training_id));
     })
 
     app.put('/putTraining', async (req, res) => {
