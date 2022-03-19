@@ -6,6 +6,7 @@ const putBooking = require("../api/putBooking.js");
 const putEvent = require("../api/putEvent.js");
 const putTraining = require("../api/putTraining.js");
 const getReferrer = require("../api/getReferrer.js");
+const getBookings = require("../api/getBookings");
 
 module.exports = {
     getEventsOfTraining,
@@ -14,7 +15,8 @@ module.exports = {
     putBooking,
     putEvent,
     putTraining,
-    getReferrer
+    getReferrer,
+    getBookings
 
 };
   

@@ -61,11 +61,16 @@ async function startRestInterfaces()
     })
 
     app.put('/putBooking/:event_id', async (req, res) => {
+        console.log("hier")
         res.send(await api.putBooking.call(req.params.event_id));
     })
 
     app.get('/getReferrer/:referrer_id', async (req, res) => {
         res.send(await api.getReferrer.call(req.params.referrer_id));
+    })
+
+    app.get('/getBookings/:event_id', async (req, res) => {
+        res.send(await api.getBookings.call(req.params.event_id));
     })
 
 }

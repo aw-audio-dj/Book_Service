@@ -1,9 +1,9 @@
 /*
-name        : getEventsOfTraining
+name        : getReferrer
 type:       : get
-description : return Events of a specific training
-parameters  : training_id: number
-callback    : events[]
+description : return referrer(s)
+parameters  : referrer_id: number
+callback    : referrer[]
 */
 
 // DB Controller
