@@ -64,4 +64,8 @@ async function startRestInterfaces()
         res.send(await api.putBooking.call(req.params.event_id));
     })
 
+    app.get('/getReferrer/:referrer_id', async (req, res) => {
+        res.send(await api.getReferrer.call(req.params.referrer_id));
+    })
+
 }

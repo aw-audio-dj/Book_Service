@@ -5,6 +5,7 @@ const getTrainingsBetweenDates = require("../api/getTrainingsBetweenDates.js");
 const putBooking = require("../api/putBooking.js");
 const putEvent = require("../api/putEvent.js");
 const putTraining = require("../api/putTraining.js");
+const getReferrer = require("../api/getReferrer.js");
 
 module.exports = {
     getEventsOfTraining,
@@ -12,6 +13,8 @@ module.exports = {
     getTrainingsBetweenDates,
     putBooking,
     putEvent,
-    putTraining
+    putTraining,
+    getReferrer
+
 };
   
