@@ -35,41 +35,40 @@ async function startRestInterfaces()
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}) );
 
-    app.get('/getTrainings', async (req, res) => {
+    app.get('/trainings', async (req, res) => {
         res.send(await api.getTrainings.call());
     })
 
-    app.get('/getTrainingsBetweenDates/:dateFrom/:dateTo', async (req, res) => {
+    app.get('/trainingsBetweenDates/:dateFrom/:dateTo', async (req, res) => {
         res.send(await api.getTrainingsBetweenDates.call(req.params.dateFrom, req.params.dateTo));
     })
 
-    // just for testing
-    app.get('/getTrainingsBetweenDates2', async (req, res) => {
+    // just for testing alternative date submit
+    app.get('/trainingsBetweenDates2', async (req, res) => {
         res.send(await api.getTrainingsBetweenDates.call(req.body.dateFrom, req.body.dateTo));
     })
 
-    app.get('/getEventsOfTraining/:training_id', async (req, res) => {
+    app.get('/eventsOfTraining/:training_id', async (req, res) => {
         res.send(await api.getEventsOfTraining.call(req.params.training_id));
     })
 
-    app.put('/putTraining', async (req, res) => {
+    app.put('/training', async (req, res) => {
         res.send(await api.putTraining.call(req.body));
     })
 
-    app.put('/putEvent', async (req, res) => {
-        res.send(await api.putEvent.call(req.body));
+    app.put('/event', async (req, res) => {
+        res.send(await api.putEvent.call(req.body.arguments));
     })
 
-    app.put('/putBooking/:event_id', async (req, res) => {
-        console.log("hier")
+    app.put('/booking/:event_id', async (req, res) => {
         res.send(await api.putBooking.call(req.params.event_id));
     })
 
-    app.get('/getReferrer/:referrer_id', async (req, res) => {
+    app.get('/referrer/:referrer_id', async (req, res) => {
         res.send(await api.getReferrer.call(req.params.referrer_id));
     })
 
-    app.get('/getBookings/:event_id', async (req, res) => {
+    app.get('/bookings/:event_id', async (req, res) => {
         res.send(await api.getBookings.call(req.params.event_id));
     })
 
