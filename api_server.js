@@ -39,12 +39,12 @@ async function startRestInterfaces()
         res.send(await api.getTrainings.call());
     })
 
-    app.get('/trainingsBetweenDates/:dateFrom/:dateTo', async (req, res) => {
+    // just for testing alternative date submit
+    app.get('/trainingsBetweenDates2/:dateFrom/:dateTo', async (req, res) => {
         res.send(await api.getTrainingsBetweenDates.call(req.params.dateFrom, req.params.dateTo));
     })
-
-    // just for testing alternative date submit
-    app.get('/trainingsBetweenDates2', async (req, res) => {
+    
+    app.get('/trainingsBetweenDates', async (req, res) => {
         res.send(await api.getTrainingsBetweenDates.call(req.body.dateFrom, req.body.dateTo));
     })
 
@@ -72,4 +72,8 @@ async function startRestInterfaces()
         res.send(await api.getBookings.call(req.params.event_id));
     })
 
+}
+
+module.exports = {
+    app
 }

@@ -11,6 +11,7 @@ let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const fileSettings = require("../../server.conf.json");
 const url = `http://localhost:${fileSettings.server.port}`;
+const api_server = require("../../api_server.js");
 
 // This is just for organisation and reporting
 describe('putBooking', function() 
@@ -18,7 +19,7 @@ describe('putBooking', function()
     // This is the name of the test
     it('should insert a new booking', function(done) 
     {
-        chai.request(url).put("/putBooking/1")
+        chai.request(api_server.app).put("/booking/1")
         .end(function (err, res) 
         {
             console.log(res.body);

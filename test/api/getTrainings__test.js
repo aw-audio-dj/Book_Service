@@ -1,50 +1,35 @@
 
-var expect  = require("chai").expect;
-const { json } = require("body-parser");
-var request = require("request");
-// FileSettings
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+chai.use(chaiHttp);
+let expect  = require("chai").expect;
+let request = require("request");
 const fileSettings = require("../../server.conf.json");
-// DB Controller
-// const db = require("../../controller/database.js");
-// Api controller
-// const api = require("../../controller/api.js");
-
-const url = `http://localhost:${fileSettings.server.port}/getTrainings`;
-
+// const url = `http://localhost:${fileSettings.server.port}/getTrainings`;
+let api_server = require("../../api_server.js");;
+let requester
 // This is just for organisation and reporting
 describe('getTrainings', function() 
 {
+    // beforeEach( () => {
+    //     api_server = require("../../api_server.js");
+    //  } ),
+    // afterEach( ( done ) => {    
+    //     delete require.cache[require.resolve( '../../api_server.js' )]
+    //     done();
+    //  } ),
+  
     // This is the name of the test
     it('should load all trainings from Database', function(done) 
     {
-        request(url, function(error, response, body) {
-            // response.body = response.body+"1"
-            console.log("statusCode: ",response.statusCode);
-            console.log("body: ",response.body, "typeof: ",typeof response.body)
-            
-            // expect(response.statusCode).to.equal(200);
-            // done();
-            try 
-            {
-                response.body = JSON.parse(response.body);
-                expect(response.body).to.not.have.property('message');
-                done();
-                // if(!response.body.hasOwnProperty("message"))
-                // {
-                //     done();
-                // }
-                // else
-                // {
-                //     done(new Error(response.body.message));
-                // }
-            } 
-            catch (error) 
-            {
-                done(new Error(error.message+"\nresponse.body: "+ JSON.stringify(response.body)));
-            }         
-            
-        });
-      
-    });
-  
+        requester = chai.request(api_server.app).get("/trainings")
+        .end(function (err, res) 
+        {
+            console.log(res.body);
+            // expect(res).to.have.status(200)
+            expect(res.body).to.not.have.property('message');            
+            done();
+        })   
+        // .then(() => api_server.app.delete())    
+    });  
 });

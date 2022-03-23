@@ -5,7 +5,9 @@
   "main": "api_server.js",
   "scripts": {
     "test": "exectest",
-    "start": "nodemon api_server.js"
+    "start": "nodemon api_server.js",
+    "test_getTrainings" : "mocha test/api/getTrainings__test.js",
+    "put_booking" : "mocha test/api/putBooking__test.js"
   },
   "keywords": [
     "api"
