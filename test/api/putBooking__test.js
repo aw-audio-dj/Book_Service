@@ -6,7 +6,6 @@ let chai = require('chai');
 let expect  = chai.expect;
 // let should = chai.should();
 // let request = require("request");
-
 let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const fileSettings = require("../../server.conf.json");

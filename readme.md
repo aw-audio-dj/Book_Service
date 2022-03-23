@@ -22,12 +22,12 @@ npm run start
 2 Unit Tests are included. If something went wrong, Please check package.json for running scripts.
 * REST Route `trainings` to get all Trainings via
 ```bash
-npm run test_getTrainings
+npm run test_get_trainings
 ```
 
 * REST Route `booking` to put a Booking (insert) via
 ```bash
-npm run put_booking
+npm run test_put_booking
 ```
 
 ## Api Description
