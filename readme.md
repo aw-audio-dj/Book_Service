@@ -5,7 +5,8 @@ A Simple Node and Express Server to show REST API calls in combination with a sq
 ## Installation
 
 * Download this Repo
-* Use node v16.14.2
+* Use node v16.14.2 `https://nodejs.dev/download`
+* Use SQLlite Browser to inspect the Database /database/db.sqlite `https://sqlitebrowser.org/`
 * Recommended VS Code as Editor
 
 ## Usage
