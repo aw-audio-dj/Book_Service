@@ -10,6 +10,7 @@ callback    : trainings[]
 ## getTrainingsBetweenDates
 name        : trainingsBetweenDates
 type:       : get
+contentType : application/json
 description : return specific Trainings from database between two date's 
 parameters  : dateFrom: date(isoString) , dateTo: date(isoString)
 callback    : trainings[]
