@@ -51,7 +51,7 @@ description : return a referrer by referrer_id or all referrers
 parameters  : referrer_id?:number
 callback    : referrer[]
 
-## getReferrer
+## bookings
 name        : bookings
 type:       : get
 description : return bookings by event_id or all bookings 
