@@ -20,7 +20,7 @@ npm install
 npm run start
 ```
 ## Unit Tests
-2 Unit Tests are included. If something went wrong, Please check package.json for running scripts.
+2 Unit Tests are included. If something went wrong, Please check package.json for scripts. The Unit Tests are made with Motcha and Chai
 * REST Route `trainings` to get all Trainings via
 ```bash
 npm run test_get_trainings
