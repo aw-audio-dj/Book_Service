@@ -83,7 +83,7 @@ npm run test_put_booking
 * **parameters**  : referrer_id?:number
 * **callback**    : referrer[]
 
-### bookings
+### getBookings
 * **name**        : bookings
 * **type**       : get
 * **description** : return bookings by event_id or all bookings 
